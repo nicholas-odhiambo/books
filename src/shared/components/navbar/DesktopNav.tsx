@@ -1,5 +1,6 @@
-import { Box, Flex, Input } from "@chakra-ui/react";
+import { Box, Flex, IconButton, Span } from "@chakra-ui/react";
 import { NavLinks } from "./NavLinks";
+import { FiSearch } from "react-icons/fi";
 
 export const DesktopNav = () => {
   return (
@@ -11,19 +12,17 @@ export const DesktopNav = () => {
         w="100%"
       >
         {/*logo */}
-        <Box>Books</Box>
+        <Box>
+          Book<Span color={"red"}>s</Span>
+        </Box>
 
         {/*nav links */}
         <NavLinks direction="row" />
 
-        {/*search*/}
-        <Input
-          placeholder="Search books..."
-          maxW="250px"
-          bg="gray.800"
-          border="none"
-          _focus={{ bg: "gray.700" }}
-        />
+        {/*search button*/}
+        <IconButton>
+          <FiSearch />
+        </IconButton>
       </Flex>
     </>
   );
