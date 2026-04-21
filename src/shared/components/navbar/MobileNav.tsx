@@ -1,4 +1,5 @@
 import { Box, Flex, IconButton } from "@chakra-ui/react";
+import { FiMenu, FiSearch } from "react-icons/fi";
 
 export const MobileNav = ({ onOpen }: { onOpen: () => void }) => {
   return (
@@ -9,11 +10,14 @@ export const MobileNav = ({ onOpen }: { onOpen: () => void }) => {
         justify="space-between"
         w="100%"
       >
-        <IconButton aria-label="Open Menu" onClick={onOpen} variant="ghost" />
-
+        <IconButton aria-label="Open Menu" variant="ghost" onClick={onOpen}>
+          <FiMenu />
+        </IconButton>
         <Box>Books</Box>
 
-        <IconButton aria-label="Search" variant="ghost" />
+        <IconButton aria-label="Search" variant="ghost">
+          <FiSearch />
+        </IconButton>
       </Flex>
     </>
   );

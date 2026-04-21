@@ -1,5 +1,6 @@
 import { Box, Flex } from "@chakra-ui/react";
 import { DesktopNav } from "./DesktopNav";
+import { MobileNav } from "./MobileNav";
 
 export const Navbar = () => {
   return (
@@ -14,7 +15,7 @@ export const Navbar = () => {
       >
         <Flex align="center" justify="space-between" h="60px">
           {/*Mobile navbar*/}
-
+          <MobileNav />
           {/* desktop navbar*/}
           <DesktopNav />
         </Flex>
