@@ -1,31 +1,70 @@
-import { Box, Container, Grid, SimpleGrid, Span, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  SimpleGrid,
+  Span,
+  Text,
+} from "@chakra-ui/react";
+import BannerImage from "@/images/hero-image.jpg";
 
 export const HomeBanner = () => {
   return (
     <>
       <Box
-        background="linear-gradient(to right,  #1d2824, #31423d)"
+        position="relative"
+        bgImage={`url(${BannerImage})`}
+        bgSize="cover"
+        bgRepeat="no-repeat"
+        bgPos="left"
         minH="100vh"
-        pt={{ base: "50px", md: "70px" }}
       >
-        <Container maxW="6xl" pt="10px">
-          <Grid templateColumns="repeat(auto-fit, minmax(250px, 1fr))" gap={6}>
-            <SimpleGrid>
+        {/* Dark overlay */}
+        <Box position="absolute" inset="0" bg="blackAlpha.700" zIndex="1" />
+
+        {/* Gradient overlay */}
+        <Box
+          position="absolute"
+          inset="0"
+          bgGradient="linear(to-r, blackAlpha.800, blackAlpha.400)"
+          zIndex="2"
+        />
+
+        <Container
+          maxW="6xl"
+          position="relative"
+          zIndex="3"
+          py={{ base: 20, md: 32 }}
+        >
+          <Grid templateColumns="repeat(auto-fit, minmax(250px, 1fr))" gap={10}>
+            <SimpleGrid gap={6} maxW="500px">
               <Text
-                color="#ffffff"
-                fontSize={{ base: "2xl", md: "4xl", lg: "4xl" }}
-                lineHeight={1.1}
+                color="white"
+                fontSize={{ base: "2xl", md: "4xl", lg: "5xl" }}
+                fontWeight="bold"
+                lineHeight="1.1"
               >
                 Welcome to Book<Span color="red">s</Span> where every page opens
                 a new world.
               </Text>
-              <Text as="p" color="#ffffff">
+
+              <Text fontSize={{ base: "md", md: "lg" }} color="whiteAlpha.800">
                 Whether you love reading for fun or learning something new, Book
                 <Span color="red">s</Span> makes your reading journey simple,
                 enjoyable, and full of endless possibilities.
               </Text>
+
+              <Button
+                size="lg"
+                colorScheme="red"
+                w={{ base: "full", sm: "fit-content" }}
+              >
+                Get Started
+              </Button>
             </SimpleGrid>
-            <SimpleGrid>2</SimpleGrid>
+
+            <SimpleGrid></SimpleGrid>
           </Grid>
         </Container>
       </Box>
