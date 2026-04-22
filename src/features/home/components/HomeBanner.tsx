@@ -17,13 +17,11 @@ export const HomeBanner = () => {
         bgImage={`url(${BannerImage})`}
         bgSize="cover"
         bgRepeat="no-repeat"
-        bgPos="left"
+        bgPos={{ base: "center", md: "left" }}
         minH="100vh"
       >
         {/* Dark overlay */}
         <Box position="absolute" inset="0" bg="blackAlpha.700" zIndex="1" />
-
-        {/* Gradient overlay */}
         <Box
           position="absolute"
           inset="0"
@@ -49,7 +47,7 @@ export const HomeBanner = () => {
                 a new world.
               </Text>
 
-              <Text fontSize={{ base: "md", md: "lg" }} color="whiteAlpha.800">
+              <Text fontSize={{ base: "md", md: "lg" }} color="white">
                 Whether you love reading for fun or learning something new, Book
                 <Span color="red">s</Span> makes your reading journey simple,
                 enjoyable, and full of endless possibilities.
@@ -57,7 +55,7 @@ export const HomeBanner = () => {
 
               <Button
                 size="lg"
-                colorScheme="red"
+                bgColor={"red"}
                 w={{ base: "full", sm: "fit-content" }}
               >
                 Get Started
