@@ -1,12 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AppLayout } from "./layouts/AppLayout";
+import { Home } from "./features/home";
 function App() {
   return (
     <>
       <Router>
         <Routes>
           <Route element={<AppLayout />}>
-            <Route path="/" />
+            <Route path="/" element={<Home />} />
           </Route>
         </Routes>
       </Router>
